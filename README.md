@@ -21,6 +21,7 @@
 - [X] A list called titles is created from the "title" column using to_list() (2 points).
 
 ### Part 2: Access The Movie Database API (40 points)
+*Note:* The movie database was giving abnormally slow responses. There were no service outages posted, so perhaps they have been getting higher levels of traffic than their infrastructure can support. Fetching all 200 titles in a single notebook cell was proving difficult. Every 20 titles took about 30 minutes to resolve. (At that rate, doing them in a single cell would have taken about 5 hours). The solution was to dump the NYT reviews into a JSON file (`reviews.json`) so that I wouldn't be up against NYT's rate limit, then divvy up the requests to the movie database in a separate file, `get_movie.ipynb`, and once the complete movie list was accumulated in memory, dump that into a JSON file (`movies.json`) as well. 
 #### Preparation (4 points):
 - [X] An empty list called tmdb_movies_list is created (1 point).
 - [X] A variable called request_counter is created and assigned the value of 1 (1 point).
